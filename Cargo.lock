@@ -1,0 +1,4 @@
+[[package]]
+name = "tic-tac-toe-rs"
+version = "0.1.0"
+
