@@ -2,9 +2,10 @@
 
 러스트로 작성된 틱택토
 희희
-러스트 조 아 
 
-'''
+**러스트 조 아** 
+
+```
 X's turn!
 What is your next move?: 5
 +---+---+---+
@@ -26,4 +27,4 @@ What is your next move?: 3
 X's turn!
 What is your next move?: 9
 X win!
-'''
+```
