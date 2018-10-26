@@ -12,11 +12,11 @@ fn main() {
 }
 
 fn print_board(board: &Board) {
-    println!("-------");
+    println!("+---+---+---+");
     for i in 0..3 {
-        println!("|{}|{}|{}|", board[i][0], board[i][1], board[i][2]);
+        println!("| {} | {} | {} |", board[i][0], board[i][1], board[i][2]);
+        println!("+---+---+---+");
     }
-    println!("-------");
 }
 
 type Board = [[Space; 3]; 3];
@@ -31,8 +31,8 @@ impl Display for Space {
     fn fmt(&self, f: &mut Formatter) -> Result<(), Error> {
         let c = match self {
             Blank => " ",
-            White => "○",
-            Black => "●",
+            White => "O",
+            Black => "X",
         };
         write!(f, "{}", c)
     }
