@@ -92,11 +92,42 @@ impl Board {
             return Some(Blank);
         }
 
-        None
+        let mut winner: Option<Tile> = None;
+        for i in 0..3 {
+            if self.tiles[i][0] == self.tiles[i][1] && self.tiles[i][1] == self.tiles[i][2] {
+                if let Blank = self.tiles[i][0] {
+                } else {
+                    winner = Some(self.tiles[i][0]);
+                    break;
+                }
+            }
+            if self.tiles[0][i] == self.tiles[1][i] && self.tiles[1][i] == self.tiles[2][i] {
+                if let Blank = self.tiles[0][i] {
+                } else {
+                    winner = Some(self.tiles[0][i]);
+                    break;
+                }
+            }
+        }
+        if self.tiles[0][0] == self.tiles[1][1] && self.tiles[1][1] == self.tiles[2][2] {
+            if let Blank = self.tiles[0][0] {
+
+            } else {
+                winner = Some(self.tiles[0][0]);
+            }
+        }
+        if self.tiles[0][2] == self.tiles[1][1] && self.tiles[1][1] == self.tiles[2][0] {
+            if let Blank = self.tiles[0][2] {
+
+            } else {
+                winner = Some(self.tiles[1][1]);
+            }
+        }
+        winner
     }
 }
 
-#[derive(Copy, Clone)]
+#[derive(Copy, Clone, PartialEq)]
 enum Tile {
     Blank,
     White,
